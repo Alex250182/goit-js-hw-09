@@ -1,14 +1,12 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 require('flatpickr/dist/themes/dark.css');
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
 
 const btnStart = document.querySelector('button[data-start]')
-const days = document.querySelector('span[data-days]')
-const hours = document.querySelector('span[data-hours]')
-const minutes = document.querySelector('span[data-minutes]')
-const seconds = document.querySelector('span[data-seconds]')
+const valueOfDays = document.querySelector('span[data-days]')
+const valueOfHours = document.querySelector('span[data-hours]')
+const valueOfMinutes = document.querySelector('span[data-minutes]')
+const valueOfSeconds = document.querySelector('span[data-seconds]')
 
 
 btnStart.disabled = true;
@@ -67,10 +65,10 @@ function onTimerStart() {
 }
 
 function updateTimerFace({ days, hours, minutes, seconds }) {
-  days.textContent = addLeadingZero(days);
-  hours.textContent = addLeadingZero(hours);
-  minutes.textContent = addLeadingZero(minutes);
-  seconds.textContent = addLeadingZero(seconds);
+  valueOfDays.textContent = addLeadingZero(days);
+  valueOfHours.textContent = addLeadingZero(hours);
+  valueOfMinutes.textContent = addLeadingZero(minutes);
+  valueOfSeconds.textContent = addLeadingZero(seconds);
 }
 
 const fp = flatpickr('#datetime-picker', options);
